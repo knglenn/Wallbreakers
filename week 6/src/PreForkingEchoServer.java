@@ -28,7 +28,7 @@ public class PreForkingEchoServer {
 
                //serverInstance is a runnable object that will be used to start a thread
                ServerInstance serverInstance = new ServerInstance(clientSocket);
-               //each client will be supported by a different thread
+               //each client will be supported by a different thread ("fork")
                Thread thread = new Thread(serverInstance);
                thread.start();
            }
